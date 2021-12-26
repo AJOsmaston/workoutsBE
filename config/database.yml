@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: workouts_development
-  username: workouts
+  username: <%= ENV["WORKOUTS_DATABASE_USERNAME"] %>
   password: <%= ENV["WORKOUTS_DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
@@ -60,7 +60,7 @@ development:
 test:
   <<: *default
   database: workouts_test
-  username: workouts
+  username: <%= ENV["WORKOUTS_DATABASE_USERNAME"] %>
   password: <%= ENV["WORKOUTS_DATABASE_PASSWORD"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -86,5 +86,5 @@ test:
 production:
   <<: *default
   database: workouts_production
-  username: workouts
+  username: <%= ENV["WORKOUTS_DATABASE_USERNAME"] %>
   password: <%= ENV["WORKOUTS_DATABASE_PASSWORD"] %>
