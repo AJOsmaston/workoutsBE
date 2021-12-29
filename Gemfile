@@ -74,3 +74,4 @@ end
 
 gem 'figaro'
 gem 'ffi'
+gem 'rack-cors'
